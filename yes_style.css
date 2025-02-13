@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff5f5;
+    font-family: 'Arial', sans-serif;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .container {
+    animation: fadeIn 2s ease-out;
+    padding: 20px; /* Agregado para asegurar que el texto no se corte */
+    margin-top: 30px; /* Espacio adicional al principio */
+  }
+  
+  .header_text {
+    font-size: 2.5em;
+    color: #e91e63;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+    word-wrap: break-word; /* Esto ayuda a que el texto se ajuste mejor en pantallas pequeñas */
+    line-height: 1.4;
+  }
+  
+  .gif_container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 30px;
+    animation: bounceIn 1s ease-out;
+  }
+  
+  /* Animación para desvanecer el texto */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animación para que el texto entre deslizándose */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animación para que el gif rebote */
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 600px) {
+    .header_text {
+      font-size: 1.8em; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+    .container {
+      margin-top: 50px; /* Aumenta el espacio superior en móviles */
+    }
+  }
+  
